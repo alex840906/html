@@ -25,7 +25,7 @@
 
 .text {
     color: white;
-    font-size:30px;
+    font-size: 30px;
     font-family: DFKai-sb;
 }
 
@@ -33,12 +33,61 @@
     overflow: auto;
     zoom: 1;
 }
+.container{
+	font-size: 30px;
+	font-family: DFKai-sb;
+	font-weight: bold;
+	color: white;
+	border: 1px;
+	width: 340px;
+	padding:10px;
+	text-align: center;
+}
+
+.border{
+	padding: 10px;
+	border: 5px white solid;
+
+}
 </style>
 
-<body class="black-background">
+
+<head>
+<SCRIPT type="text/javascript" Language="JavaScript">
+	function showDate()
+{
+	var now = new Date();
+	var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+	var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+	var date = ((now.getDate()<10) ? "0" : "")+ now.getDate();
+	function fourdigits(number)
+	{
+		return (number < 1000) ? number + 1900 : number;
+	}
+
+tnow=new Date();
+thour=now.getHours();
+tmin=now.getMinutes();
+tsec=now.getSeconds();
+
+if (tmin<=9) { tmin="0"+tmin; }
+if (tsec<=9) { tsec="0"+tsec; }
+if (thour<10) { thour="0"+thour; }
+
+today = days[now.getDay()] + ", " + date + ", " + months[now.getMonth()] + ", " + (fourdigits(now.getYear())) + " - " + thour + ":" + tmin +":"+ tsec;
+document.getElementById("dateDiv").innerHTML = today;
+}
+setInterval("showDate()", 1000);
+</SCRIPT>
+
+
+<body class="black-background" >
+	<p id = "dateDiv" class = "container"></p>
     <h1 class="h" style="text-align:center;">資工四乙   陳柏勳   personal page</h1>
     <p style="font-size: 40px;color: white;text-align: center;font-family: impact;letter-spacing: 5px;font-weight: bold;">臉書:<a href="https://www.facebook.com/profile.php?id=100001555210522" style="font-size:40px; color:#00ffff; text-align:center;font-family: DFKai-sb;letter-spacing:5px;text-decoration:none;">陳柏勳</a></p>
-    <div class="clear-fix">
+
+
+    <div class="clear-fix border">
         <img alt="我的照片掛了 " src="https://i.imgur.com/haeAXwM.jpg" width="500" height="700 " style="margin: 40px;float: left;">
         <p class="text">我是帥哥</p>
         <p class="text">我搞排版用好久</p>
@@ -52,7 +101,10 @@
         <img alt="我的照片掛了 " src="https://i.imgur.com/PwGitjd.jpg" width="500" height="700 " style="margin: 40px;float: left;">
         <br>
     </div>
-    <p style="color:orange">test10</p>
-</body>
+    
+    <p style="color:orange">test11</p>
 
+
+</body>
+</head>
 </html>
